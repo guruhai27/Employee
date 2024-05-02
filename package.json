@@ -13,10 +13,12 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
-    "@sap/hdi-deploy": "4.9.4"
+    "@sap/hdi-deploy": "4.9.4",
+    "@sap/ux-specification": "^1.120.9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-employeeapp": "cds watch --open employeeapp/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -25,5 +27,8 @@
     "hana": {
       "deploy-format": "hdbtable"
     }
-  }
+  },
+  "sapux": [
+    "app/employeeapp"
+  ]
 }
