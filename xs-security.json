@@ -1,0 +1,34 @@
+{
+    "xsappname": "employee",
+    "tenant-mode": "dedicated",
+    "scopes": [
+      {
+        "name": "$XSAPPNAME.Viewer",
+        "description": "someone can view data using this scope"
+      },
+      {
+        "name": "$XSAPPNAME.Admin",
+        "description": "someone can perform CURD on data using this scope"
+      }
+    ],
+
+    "role-templates": [
+      {
+        "name": "Admin",
+        "description": "Edit, delete all data from service",
+        "scope-references": [
+          "$XSAPPNAME.Admin"
+        ]
+      }
+    ],
+    "authorities": [
+      "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "oauth2-configuration": {
+      "token-validity": 9000,
+      "redirect-uris": [
+        "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+      ]
+    },
+    "xsenableasyncservice": "true"
+  }
